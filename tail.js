@@ -7,9 +7,9 @@ const assertEqual = function(actual, expected) {
 };
 
 const result = tail(["Hello", "Lighthouse", "Labs"]);
-function tail(array) {
+const tail = (array) => {
   return array.slice(1); /*new array without head*/
-}
+};
 assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
 assertEqual(result[1], "Labs"); // ensure second element is "Labs"
 
