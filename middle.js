@@ -34,7 +34,7 @@ const middle = function(array) {
   if (array.length <= 2) {
     return [];
   } else if (array.length % 2 === 1) {
-    return [array[Math.floor(middleElement)]]; //odd array return one element
+    return [array[Math.floor(middleElement)]]; //odd array return one element; math floor index of the middle element
   } else {
     return [array[middleElement - 1], array[middleElement]]; // even array two elements
   }
