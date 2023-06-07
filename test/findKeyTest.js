@@ -1,5 +1,6 @@
-const assertEqual = require(`../assertEqual`);
+const assert = require(`chai`).assert;
 const findKey = require(`../findKey`);
+
 
 const stars = {
   "Blue Hill": { stars: 1 },
@@ -10,9 +11,12 @@ const stars = {
   "Akelarre":  { stars: 3 }
 };
 
-const result1 = findKey(stars, x => x.stars === 2);
-console.log(result1);
-const result2 = findKey(stars, x => x.stars === 4); // the stars doesnt exist
-console.log(result2);
-assertEqual(result1, "noma");
-assertEqual(result2, undefined);
+describe("#findkeyByValue", () => {
+  it(`return noma for stars 2`, () => {
+    assert.deepEqual(findKey(stars, x => x.stars === 2), "noma");
+  });
+
+  it(`return undefined if stars do not exist"`, () => {
+    assert.deepEqual(findKey(stars, x => x.stars === 4), undefined);
+  });
+});

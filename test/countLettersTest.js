@@ -1,7 +1,11 @@
-const assertEqual = require(`../assertEqual`);
+const assert = require(`chai`).assert;
 const countLetters = require(`../countLetters`);
 
-
 const result = countLetters('lighthouse in the house');
-console.log(result);
-assertEqual(result["h"], 4);
+
+describe("#countLetters", () => {
+  
+  it(`count letter h and return 4`, () => {
+    assert.deepEqual(result["h"], 4);
+  });
+});
