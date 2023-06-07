@@ -1,21 +1,39 @@
-const assertEqual = require(`../assertEqual`);
+const assert = require(`chai`).assert;
 const tail = require(`../tail`);
 
 const result = tail(["Hello", "Lighthouse", "Labs"]);
-assertEqual(result[0], "Lighthouse"); // ensure first element is "Lighthouse"
-assertEqual(result[1], "Labs"); // ensure second element is "Labs"
+const words = tail(["Yo Yo", "Lighthouse", "Labs"]);
 
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3);
-assertEqual(result.length, 2); // ensure we get back two elements
+describe("#tail", () => {
+  
+  it(`return ["Lighthouse", "Labs"] for array ["Hello", "Lighthouse", "Labs"]`, () => {
+    assert.deepEqual(result,  ["Lighthouse", "Labs"]);
+  });
 
-const emptyArray = [];
-const emptyArrayTail = tail(emptyArray);
-assertEqual(emptyArray.length, 0); /* check that head is empty*/
-assertEqual(emptyArrayTail.length, 0); /*ensure tail empty*/
+  it(`return first element in a tail array ["Lighthouse", "Labs"]`, () => {
+    assert.deepEqual(result[0],  "Lighthouse");
+  });
 
-const oneElement = ["Hello"];
-const oneElementTail = tail(oneElement);
-assertEqual(oneElementTail.length, 0);
-assertEqual(oneElement.length, 1);
+  it(`return second element in a tail array ["Lighthouse", "Labs"]`, () => {
+    assert.deepEqual(result[1],  "Labs");
+  });
+
+  
+  it(`return back two elements from array ["Yo Yo", "Lighthouse", "Labs"]`, () => {
+    assert.strictEqual(words.length,  2);
+  });
+
+  it(`return empty array for an empty array`, () => {
+    const emptyArray = [];
+    const emptyArrayTail = tail(emptyArray);
+    assert.deepEqual(emptyArray, []);
+    assert.deepEqual(emptyArrayTail, []);
+  });
+
+  it(`return empty array for an array with One element`, () => {
+    const oneElement = ["Hello"];
+    const oneElementTail = tail(oneElement);
+    assert.deepEqual(oneElement, ["Hello"]);
+    assert.deepEqual(oneElementTail, []);
+  });
+});
