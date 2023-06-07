@@ -1,27 +1,33 @@
-const assertArraysEqual = require(`../assertArraysEqual`);
+
+const assert = require(`chai`).assert;
 const letterPositions = require(`../letterPositions`);
 
-const test = letterPositions("hello");
-
-assertArraysEqual(test.e, [1]);
-
 const test1 = letterPositions('hello');
-// h: [0], e: [1], l: [2, 3], o: [4]
-assertArraysEqual(test1['h'], [0]);
-assertArraysEqual(test1['e'], [1]);
-assertArraysEqual(test1['l'], [2, 3]);
-assertArraysEqual(test1['o'], [4]);
-
 const test2 = letterPositions('web developement');
-// w: [0], e: [1, 5, 7, 11, 13], b: [2], d: [4], v: [6], l: [8], o: [9], p: [10], m: [12], n: [14], t: [15]
-assertArraysEqual(test2['w'], [0]);
-assertArraysEqual(test2['e'], [1, 5, 7, 11, 13]);
-assertArraysEqual(test2['b'], [2]);
-assertArraysEqual(test2['d'], [4]);
-assertArraysEqual(test2['v'], [6]);
-assertArraysEqual(test2['l'], [8]);
-assertArraysEqual(test2['o'], [9]);
-assertArraysEqual(test2['p'], [10]);
-assertArraysEqual(test2['m'], [12]);
-assertArraysEqual(test2['n'], [14]);
-assertArraysEqual(test2['t'], [15]);
+
+describe("#letterPositions", () => {
+  it(`return e from word hello`, () => {
+    assert.deepEqual(letterPositions("hello").e, [1]);
+  });
+
+  it(`return letters from word hello`, () => {
+    assert.deepEqual(test1['h'], [0]);
+    assert.deepEqual(test1['e'], [1]);
+    assert.deepEqual(test1['l'], [2, 3]);
+    assert.deepEqual(test1['o'], [4]);
+  });
+  it(`return letters from word "web developement"`, () => {
+    assert.deepEqual(test2['w'], [0]);
+    assert.deepEqual(test2['e'], [1, 5, 7, 11, 13]);
+    assert.deepEqual(test2['b'], [2]);
+    assert.deepEqual(test2['d'], [4]);
+    assert.deepEqual(test2['v'], [6]);
+    assert.deepEqual(test2['l'], [8]);
+    assert.deepEqual(test2['o'], [9]);
+    assert.deepEqual(test2['p'], [10]);
+    assert.deepEqual(test2['m'], [12]);
+    assert.deepEqual(test2['n'], [14]);
+    assert.deepEqual(test2['t'], [15]);
+  });
+
+});
