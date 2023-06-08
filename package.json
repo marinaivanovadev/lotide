@@ -1,7 +1,7 @@
 {
   "name": "lotide",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.0",
+  "description": "Lotide project_Marina Ivanova",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/marinaivanovadev/lotide.git"
   },
-  "author": "",
+  "author": "Marina Ivanova marina.ivanova.ca@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/marinaivanovadev/lotide/issues"
