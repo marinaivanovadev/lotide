@@ -3,7 +3,7 @@
 
 const countOnly = function(allItems, itemsToCount) {
   const results = {}; //  define a new empty object
-  for (const item of allItems) { //oop over all the items in the array
+  for (const item of allItems) { //loop over all the items in the array
     if (itemsToCount[item]) { // is found in the itemsToCount object
       if (results[item]) {
         results[item] += 1; //count all item
