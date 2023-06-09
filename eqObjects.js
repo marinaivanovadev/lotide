@@ -1,5 +1,3 @@
-// Returns true if both objects have identical keys with identical values.
-// Otherwise you get back a big fat false!
 const eqArrays = require(`./eqArrays`);
 const eqObjects = function(object1, object2) {
   const keys1 = Object.keys(object1); // access to keys
@@ -25,10 +23,3 @@ const eqObjects = function(object1, object2) {
 
 module.exports = eqObjects;
 
-//if (typeof valueOne === "object" && typeof valueTwo === "object") { // compare type of value
-//  if (!eqObjects(valueOne, valueTwo)) {
-//    return false;
-//  }
-//} else {
-//  if (valueOne !== valueTwo) { //check the value
-//    return false;

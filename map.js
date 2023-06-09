@@ -1,10 +1,3 @@
-// map function
-// two arguments
-// an array to map
-// a cb function
-//return a new array
-
-
 const map = function(array, callback) {
   
   const results = [];
