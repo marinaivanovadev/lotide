@@ -2,7 +2,7 @@
   "name": "@marinaivanovadev/lotide",
   "version": "1.0.0",
   "description": "Lotide project_Marina Ivanova",
-  "main": "assertArraysEqual.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
